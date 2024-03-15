@@ -1,22 +1,10 @@
 # Final-Project-6
 Experis Academy Final Project Ateeb &amp; Tønnes 
 
-
-
-
-
-Backend 
-
-
-
-
-
 Front:
 
 Search bar: Til å søke i muskel grupper 
 Filtrering: Muskler
-
-
 
 Pages
 
@@ -39,8 +27,6 @@ Høyre:
 
     I bunn. spørreskjema, hvordan økten var? 
     Submit.
-
-
 
 
 Back-End
