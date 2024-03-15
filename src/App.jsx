@@ -1,8 +1,29 @@
-import { Link, Route, Routes,  } from 'react-router-dom';
-import Login from './components/LoginPage/Login.jsx';
-import { Signup } from './components/LoginPage/Signup.jsx'
-import Workout from './components/WorkoutPage/Workout.jsx';
 
+import Workout from './components/WorkoutPage/Workout.jsx';
+import './App.css'
+
+
+
+// Original is commented out at the bootum. Need to update to implement the Workout page
+// This uncommented part is a proxy to direct the app to the workout page 
+function App() {
+    return (
+        <>
+          <div className="container">
+            <div className="header">
+                <h3>Menu</h3>
+            </div>
+            <div className="content">
+                < Workout />  
+            </div>
+          </div>
+        </>
+    );
+  }
+  
+  export default App;
+
+/*
 function App() {
   return (
         <div>
@@ -31,3 +52,5 @@ function App() {
 }
 
 export default App;
+
+*/

@@ -1,7 +1,16 @@
+import './WorkoutPage.css'
+
 export default function Workout(){
     return(
-        <div>
-            <h1>Welcome Peasants</h1>
-        </div>
+        <>
+            <div className="workout">
+                <div className="wo-left">
+                    Left
+                </div>
+                <div className="wo-right">
+                    Program
+                </div>
+            </div>
+        </>
     )
 }
