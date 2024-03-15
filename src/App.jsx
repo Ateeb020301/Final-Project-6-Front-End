@@ -1,7 +1,7 @@
 import { Link, Route, Routes,  } from 'react-router-dom';
-import Login from './Login';
-import { Signup } from './assets/Signup';
-import Dash from './assets/Dash';
+import Login from './components/LoginPage/Login.jsx';
+import { Signup } from './components/LoginPage/Signup.jsx'
+import Workout from './components/WorkoutPage/Workout.jsx';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Signup/>} />
-            <Route path='/dash' element={<Dash/>} /> 
+            <Route path='/workout' element={<Workout/>} /> 
         </Routes>
 
         </div>
