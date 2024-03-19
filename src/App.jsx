@@ -1,5 +1,5 @@
 
-import Workout from './components/WorkoutPage/Workout.jsx';
+import { Workout } from './components/WorkoutPage/Workout.jsx';
 import './App.css'
 
 
@@ -10,9 +10,9 @@ function App() {
     return (
         <>
           <div className="container">
-            <div className="header">
-                <h3>Menu</h3>
-            </div>
+            <header className="header">
+                Menu
+            </header>
             <div className="content">
                 < Workout />  
             </div>
