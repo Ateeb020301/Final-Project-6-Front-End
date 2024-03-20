@@ -5,6 +5,7 @@
     flex-flow: column;
     border: solid black 1px;
     overflow-y: auto;
+    background-color: #555555;
 }
 
 .edit-header {

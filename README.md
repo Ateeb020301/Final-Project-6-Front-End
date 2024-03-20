@@ -39,3 +39,17 @@ Entitet:
     exercise?type=${"legs"}
 
     filter(ex => ex.type === "legs")
+
+
+    Linking:
+
+    Meny 
+
+    home
+    profil
+    log history
+
+    home = select 
+
+
+

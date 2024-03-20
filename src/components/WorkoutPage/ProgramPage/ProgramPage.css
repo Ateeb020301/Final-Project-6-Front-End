@@ -4,8 +4,9 @@
     height: 100%;
     display: flex;
     flex-flow: column;
-    border: solid black 1px;
+    border-top: solid black 1.5px;
     overflow-y: auto;
+    background-color: #555555;
 }
 
 .program-page-header {
@@ -20,8 +21,7 @@
 
 .program-card {
     width: 100%;
-    background-color: aqua;
-    border: #000 solid 2px;
+    background-color: rgb(37, 37, 37);
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
@@ -30,7 +30,7 @@
 
 .program-card:hover {
     transform: scale(1.01);
-    background-color: rgb(0, 231, 231);
+    background-color: rgb(58, 58, 58);
 }
 
 .program-card-left {
@@ -73,7 +73,7 @@
   }
   
   .exercise-table th, .exercise-table td {
-    border: 1px solid #dddddd;
+    border: 1px solid #ffffff;
     padding: 8px;
     text-align: center;
     width: 33.33%;
@@ -83,8 +83,8 @@
     background-color: #f2f2f2;
   }
   
-  .exercise-table tbody tr:hover {
-    background-color: #ddd;
+  .exercise-table tbody tr:hover, th:hover{
+    background-color: #000000;
   }
 
 

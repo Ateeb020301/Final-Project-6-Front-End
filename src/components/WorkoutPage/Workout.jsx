@@ -1,18 +1,18 @@
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 import './WorkoutPage.css'
 import EditPage from './EditPage/EditPage'
 import SelectPage from './SelectPage/SelectPage'
 import '../../App.css'
-import { createContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import woData from './data'
 import ProgramPage from './ProgramPage/ProgramPage'
+import { MainContext } from '../../App'
 
 const WOContext = createContext()
 
 function Workout(){
     const navigator = useNavigate()
-    const [data, setData] = useState(woData);
-    const [workout, setWorkout] = useState([]);
+    const {data, setData, workout, setWorkout} = useContext(MainContext)
     const [targetSets, setTargetSets] = useState("3");
     const [targetReps, setTargetReps] = useState("10");
 
@@ -35,7 +35,7 @@ function Workout(){
     }  
 
     const handleWOLogEdit = (id) => {
-        navigator(`/edit/${id}`)
+        navigator(`/create/edit/${id}`)
     }
 
     const handleWOLogRemove = (id) => {
@@ -49,7 +49,7 @@ function Workout(){
             }
             return ex
         }))
-        navigator("/workouts")
+        navigator("/create/workouts")
     }
 
     return(
@@ -57,10 +57,7 @@ function Workout(){
         <>
             <div className="workout-page">
                 <div className='wo-columns'>
-                    <Routes>
-                        <Route  path="/edit/:id" element={<EditPage /> }/> 
-                        <Route  path="/workouts" element={<SelectPage /> }/> 
-                    </Routes>
+                    < Outlet />
                 </div>
                 <div className='wo-columns'>
                     < ProgramPage />

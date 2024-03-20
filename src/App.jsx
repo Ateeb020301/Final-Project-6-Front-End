@@ -1,56 +1,49 @@
 
-import { Workout } from './components/WorkoutPage/Workout.jsx';
 import './App.css'
+import { Route, Routes } from 'react-router-dom';
+import Menu from './components/Menu/Menu.jsx';
+import Login from "./components/LoginPage/Login.jsx"
+import { Signup } from "./components/LoginPage/Signup.jsx"
+import { Workout } from './components/WorkoutPage/Workout.jsx';
+import SelectPage from './components/WorkoutPage/SelectPage/SelectPage.jsx';
+import EditPage from './components/WorkoutPage/EditPage/EditPage.jsx';
+import woData from './components/WorkoutPage/data.js';
+import { createContext, useState } from 'react';
+import HomePage from './components/WorkoutPage/SelectPage/HomePage.jsx';
 
-
+const MainContext = createContext()
 
 // Original is commented out at the bootum. Need to update to implement the Workout page
-// This uncommented part is a proxy to direct the app to the workout page 
+// This uncommented part is a proxy to direct the app to the workout page
 function App() {
+    const [data, setData] = useState(woData);
+    const [workout, setWorkout] = useState([]);
+
     return (
         <>
           <div className="container">
             <header className="header">
-                Menu
+                < Menu />
             </header>
             <div className="content">
-                < Workout />  
+            <MainContext.Provider  value = { {data: data, workout: workout, setData: setData, setWorkout: setWorkout} } >
+                <Routes>
+                    <Route path="home" element={<HomePage />} />
+                    <Route path="login" element={<Login />} />
+                    <Route path="/" element={< Signup/>} />
+                    <Route path='create' element={<Workout />} >
+                        <Route path='workouts' element={< SelectPage />} />
+                        <Route path='edit/:id' element={< EditPage />} />
+                    </Route> 
+                </Routes>
+            </MainContext.Provider>
             </div>
           </div>
         </>
     );
-  }
-  
-  export default App;
-
-/*
-function App() {
-  return (
-        <div>
-            <header>
-                <h1>Menu</h1>
-            </header>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Sign Up</Link>
-                    </li>
-                    <li>
-                        <Link to="/login">Log in</Link>
-                    </li>
-                </ul>
-            </nav>
-        <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Signup/>} />
-            <Route path='/workout' element={<Workout/>} /> 
-        </Routes>
-
-        </div>
-
-  );
 }
+  
+  export { App, MainContext };
 
-export default App;
 
-*/
+

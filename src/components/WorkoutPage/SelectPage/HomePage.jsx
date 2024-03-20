@@ -1,11 +1,11 @@
 import { useContext,  useState } from "react";
 import "../WorkoutPage.css"
-import ExerciseCard from "./ExerciseCard";
-import { WOContext } from "../Workout";
+import { MainContext } from "../../../App";
+import HomeExerciseCard from "./HomeExerciseCard";
 
 
-const SelectPage = () => {
-    const { data, targetReps, setTargetReps, targetSets, setTargetSets } = useContext(WOContext)
+const HomePage = () => {
+    const { data } = useContext(MainContext)
     const [search, setSearch] = useState();
     const filteresByMuscleGroups = {'Arm': [], 'Shoulder': [], 'Chest': [], 'Back': [], 'Legs': [], 'Abs': []}
 
@@ -13,14 +13,6 @@ const SelectPage = () => {
         e.preventDefault()
         setSearch(e.target.value)
     }
-
-    const handleTargetSetsChange = (e) => {
-        setTargetSets(e.target.value)
-    } 
-
-    const handleTargetRepsChange = (e) => {
-        setTargetReps(e.target.value)
-    } 
 
     if (!data) {
         return (<div>Loading</div>)
@@ -59,28 +51,6 @@ const SelectPage = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="default-targets">
-                    <div>Defaults: </div>
-                    <div>
-                        {"Sets:  "} 
-                        <input 
-                            className="target-sets"
-                            name="targetSets"
-                            value={targetSets}
-                            onChange={handleTargetSetsChange}
-                            />
-                    </div>
-                    <div>
-                        {"Reps:"}
-                        <input 
-                            className="target-reps"
-                            name="targetReps"
-                            value={targetReps}
-                            onChange={handleTargetRepsChange}
-                            />
-                    </div>
-
-                </div>
             </header>
             <div className="ex-container">
                 {Object.keys(filteresByMuscleGroups).map((key, index) => (
@@ -89,7 +59,7 @@ const SelectPage = () => {
                         <div className="exercise-banner-header">{key}</div>
                         <div className="exercise-card-container">
                             {filteresByMuscleGroups[key].map((exercise, index2) => (
-                                    <ExerciseCard key={index2} group={key} exercise={exercise} select={false} />
+                                    <HomeExerciseCard key={index2} group={key} exercise={exercise} select={false} />
                             ))}
                         </div>
                     </div>
@@ -99,4 +69,4 @@ const SelectPage = () => {
     );
 }
  
-export default SelectPage;
+export default HomePage;

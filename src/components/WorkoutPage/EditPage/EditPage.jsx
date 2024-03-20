@@ -14,7 +14,7 @@ const EditPage = () => {
     }, []);
     
     const handleBack = () => {
-        navigator("/workouts")  
+        navigator("/create/workouts")  
     }
 
     const handleDecrementSets = () => {
@@ -65,8 +65,6 @@ const EditPage = () => {
     }
 
     const dataExercise = data.find(ex => ex.id === parseInt(id))
-
-    console.log(exercise.weight)
 
     return ( 
         <>
