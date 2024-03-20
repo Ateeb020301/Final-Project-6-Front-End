@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import './WorkoutPage.css'
 import EditPage from './EditPage/EditPage'
 import SelectPage from './SelectPage/SelectPage'
@@ -10,6 +10,7 @@ import ProgramPage from './ProgramPage/ProgramPage'
 const WOContext = createContext()
 
 function Workout(){
+    const navigator = useNavigate()
     const [data, setData] = useState(woData);
     const [workout, setWorkout] = useState([]);
     const [targetSets, setTargetSets] = useState("3");
@@ -32,15 +33,32 @@ function Workout(){
 
         setWorkout([...workout, exercise])
     }  
-    console.log(workout)
+
+    const handleWOLogEdit = (id) => {
+        navigator(`/edit/${id}`)
+    }
+
+    const handleWOLogRemove = (id) => {
+        setWorkout(workout.filter(exercise => exercise.exerciseId !== id))
+    }
+
+    const handleWOLogUpdate = (exercise) => {
+        setWorkout(workout.map(ex => {
+            if (ex.exerciseId === exercise.exerciseId) {
+                return exercise
+            }
+            return ex
+        }))
+        navigator("/workouts")
+    }
 
     return(
-        <WOContext.Provider value = { {data: data, workout: workout, handleWOChange: handleWOChange, targetReps: targetReps, setTargetReps: setTargetReps, targetSets: targetSets, setTargetSets: setTargetSets} }>
+        <WOContext.Provider value = { {data: data, workout: workout, handleWOChange: handleWOChange, targetReps: targetReps, setTargetReps: setTargetReps, targetSets: targetSets, setTargetSets: setTargetSets, handleWOLogEdit: handleWOLogEdit, handleWOLogRemove: handleWOLogRemove, handleWOLogUpdate: handleWOLogUpdate} }>
         <>
             <div className="workout-page">
                 <div className='wo-columns'>
                     <Routes>
-                        <Route  path="/edit" element={<EditPage /> }/> 
+                        <Route  path="/edit/:id" element={<EditPage /> }/> 
                         <Route  path="/workouts" element={<SelectPage /> }/> 
                     </Routes>
                 </div>

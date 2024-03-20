@@ -49,18 +49,13 @@
 .default-targets {
     display: flex;
     flex-flow: column;
-    right: 1%;
+    width: 16%;
+    justify-content: end;
 }
 
-.target-sets {
-    width: 8%;
-
-}
-
-.target-reps {
-    width: 8%;
-
-
+.target-sets, .target-reps {
+    width: 25%;
+    justify-content: end;
 }
 
 

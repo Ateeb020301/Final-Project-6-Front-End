@@ -5,6 +5,8 @@ import "./ProgramPage.css"
 
 const ProgramPage = () => {
     const { workout } = useContext(WOContext)
+    
+    
 
     return ( 
         <div className="program-page-container">
