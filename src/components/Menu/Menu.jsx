@@ -26,12 +26,12 @@ const Menu = () => {
                 </div>
                 <div 
                     className="menu-item"
-                    onClick={() => handleClick("log")}>
+                    onClick={() => handleClick("/log")}>
                     Log History
                 </div>
                 <div 
                     className="menu-item"
-                    onClick={() => handleClick("profile")}>
+                    onClick={() => handleClick("/profile")}>
                     Profile
                 </div>
             </div>

@@ -12,6 +12,10 @@ import { createContext, useState } from 'react';
 import HomePage from './components/WorkoutPage/SelectPage/HomePage.jsx';
 import { useEffect } from 'react';
 import axios from 'axios';
+import LoginSignin from './components/LoginPage/LoginSignin.jsx';
+import { Profile } from './components/Profile/Profile.jsx';
+import { LogWorkout } from './components/LogHistory/LogWorkout.jsx';
+
 
 const MainContext = createContext()
 
@@ -81,21 +85,23 @@ function App() {
     return (
         <>
           <div className="container">
-            <MainContext.Provider  value = { {data: data, workout: workout, setData: setData, setWorkout: setWorkout, person: person, error:error, setError: setError} } >
-                <header className="header">
-                    < Menu />
-                </header>
-                <div className="content">
-                    <Routes>
-                        <Route path="home" element={<HomePage />} />
-                        <Route path="login" element={<Login />} />
-                        <Route path="/" element={< Signup/>} />
-                        <Route path='create' element={<Workout />} >
-                            <Route path='workouts' element={< SelectPage />} />
-                            <Route path='edit/:index' element={< EditPage />} />
-                        </Route> 
-                    </Routes>
-                </div>
+            <header className="header">
+                < Menu />
+            </header>
+            <div className="content">
+            <MainContext.Provider  value = { {data: data, workout: workout, setData: setData, setWorkout: setWorkout, person:person, error:error} } >
+                      {/* {!isAuthenticated ? <LoginSignin/> : null} */}
+                <Routes>
+                    <Route path="home" element={<HomePage />} />
+                    <Route path="login" element={<Login />} />
+                    <Route path="/" element={< Signup/>} />
+                    <Route path='create' element={<Workout />} >
+                        <Route path='workouts' element={< SelectPage />} />
+                        <Route path='edit/:id' element={< EditPage />} />
+                    </Route> 
+                    <Route path="/profile" element={<Profile/>} />
+                    <Route path="/log" element={<LogWorkout/>} />
+                </Routes>
             </MainContext.Provider>
           </div>
         </>
@@ -104,5 +110,8 @@ function App() {
   
   export { App, MainContext };
 
+function isLoggedIn() {
+  return !!localStorage.getItem('userToken');
+}
 
 
