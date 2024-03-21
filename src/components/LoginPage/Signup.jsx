@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export function Signup() {
   const [username, setUsername] = useState('');
@@ -24,17 +25,27 @@ export function Signup() {
   };
 
   return (
-    <div className="signup">
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <input type="checkbox" value="admin" onChange={(e) => setRoles([...roles, e.target.value])} /> Admin
-        <input type="checkbox" value="mod" onChange={(e) => setRoles([...roles, e.target.value])} /> Moderator
-        <button type="submit">Sign Up</button>
-      </form>
-      {message && <p>{message}</p>}
+    <div className='wrapper'>
+        <div className="signup">
+          <div>
+            <header>
+              <Link to='/login'>Login</Link>
+            </header>
+            <h2>Signup</h2>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <div>
+            <input type="checkbox" value="admin" onChange={(e) => setRoles([...roles, e.target.value])} /> Admin
+            <input type="checkbox" value="mod" onChange={(e) => setRoles([...roles, e.target.value])} /> Moderator
+            </div>
+
+            <button type="submit">Sign Up</button>
+          </form>
+        {message && <p>{message}</p>}
+      </div>
     </div>
   );
 }
