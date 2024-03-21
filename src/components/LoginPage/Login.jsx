@@ -18,7 +18,7 @@ const {setIsAuthenticated} = props
             localStorage.setItem('userToken', response.data.token);
             localStorage.setItem('username', username)
             setIsAuthenticated(true);
-            window.location.href = '/dash';
+            window.location.href = '/';
         })
       console.log(response.data); 
       setMessage("Login successful!");
