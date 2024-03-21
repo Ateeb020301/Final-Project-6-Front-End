@@ -35,7 +35,7 @@ function Workout(){
     }
 
     const handleWOLogRemove = (id) => {
-        setWorkout(workout.exercises.filter(exercise => exercise.exerciseId !== id))
+        setWorkout({...workout, exercises: workout.exercises.filter(exercise => exercise.exerciseId !== id)})
     }
 
     const handleWOLogUpdate = (exercise) => {
