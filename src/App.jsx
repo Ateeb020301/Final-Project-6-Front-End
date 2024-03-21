@@ -104,5 +104,8 @@ function App() {
   
   export { App, MainContext };
 
+function isLoggedIn() {
+  return !!localStorage.getItem('userToken');
+}
 
 

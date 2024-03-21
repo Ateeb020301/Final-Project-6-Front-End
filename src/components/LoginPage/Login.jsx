@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import './App.css'
+import './login.css'
 
 function Login(props) {
 const {setIsAuthenticated} = props
