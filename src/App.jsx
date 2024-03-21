@@ -23,8 +23,9 @@ const initWorkout = {
 // This uncommented part is a proxy to direct the app to the workout page
 function App() {
     const [data, setData] = useState(woData);
-    const [workout, setWorkout] = useState(initWorkout);
+    const [workout, setWorkout] = useState(initWorkout); 
 
+    // fjern
     return (
         <>
           <div className="container">
