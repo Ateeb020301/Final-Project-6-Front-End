@@ -5,7 +5,7 @@ import { WOContext } from "../Workout";
 
 const ExerciseCard = ( {exercise}) => {
     const { handleWOChange, workout } = useContext(WOContext)
-    const exAdded = workout.exercises.some(ex => ex.exerciseId === exercise.id)
+    const exAdded = workout.exercises.some(ex => ex.workoutName === exercise.workoutName)
 
     return ( 
         <div className="exercise-card">
@@ -22,7 +22,7 @@ const ExerciseCard = ( {exercise}) => {
                 {exercise.description}
             </div>
             {exAdded && <button>Added</button>}
-            {!exAdded && <button onClick={() => handleWOChange(exercise.id)}>Add</button>}
+            {!exAdded && <button onClick={() => handleWOChange(exercise.workoutName)}>Add</button>}
         </div>
      );
 }

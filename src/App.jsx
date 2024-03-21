@@ -20,7 +20,7 @@ import { LogWorkout } from './components/LogHistory/LogWorkout.jsx';
 const MainContext = createContext()
 
 const initWorkout = {
-    userId: "TODO",
+    logDat: "",
     exercises: [],   
     notes: ""
 }
@@ -103,7 +103,6 @@ function App() {
                     <Route path="/log" element={<LogWorkout/>} />
                 </Routes>
             </MainContext.Provider>
-            </div>
           </div>
         </>
     );
