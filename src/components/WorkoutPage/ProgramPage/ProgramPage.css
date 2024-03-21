@@ -1,12 +1,17 @@
 
 .program-page-container {
     width: 50vw;
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    border-top: solid black 1.5px;
+    height: 89.7vh;
+    border-top: solid rgb(0, 0, 0) 1.5px;
     overflow-y: auto;
     background-color: #555555;
+}
+
+.program-content { 
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 83.7vh;
 }
 
 .program-page-header {
@@ -17,6 +22,12 @@
 
 .program-card-container {
     margin: 1%;
+}
+
+.program-cards { 
+    display: flex;
+    flex-flow: column;
+
 }
 
 .program-card {
@@ -51,7 +62,6 @@
 }
 
 .program-card-buttons {
-    justify-content: space-around;
 
 }
 
@@ -63,9 +73,6 @@
     display: flex;
     margin: 3%;
 }
-
-
-
 
 .exercise-table {
     width: 20%;
@@ -85,6 +92,26 @@
   
   .exercise-table tbody tr:hover, th:hover{
     background-color: #000000;
+  }
+
+  .program-bottom {
+    margin: 2%;
+}
+
+  .program-notes {
+    width: auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+  }
+
+  .program-submit {
+    display: flex;
+    justify-content: end;
+    margin: 3%;
+    margin
+
   }
 
 

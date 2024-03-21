@@ -10,7 +10,7 @@ const EditPage = () => {
     const [exercise, setExercise] = useState();
 
     useEffect(() => {
-        setExercise(workout.find(ex => ex.exerciseId === parseInt(id)))
+        setExercise(workout.exercises.find(ex => ex.exerciseId === parseInt(id)))
     }, []);
     
     const handleBack = () => {
@@ -37,7 +37,6 @@ const EditPage = () => {
         const name = eName.split('_')[0]
         const value = e.target.value
         const index = parseInt(eName.split('_')[1])
-        console.log(name, value, index)
         setExercise(exercise => ({
             ...exercise, [name]: [...exercise[name].slice(0, index),
               value, ...exercise[name].slice(index + 1) 

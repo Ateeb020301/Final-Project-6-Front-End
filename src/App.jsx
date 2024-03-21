@@ -13,11 +13,17 @@ import HomePage from './components/WorkoutPage/SelectPage/HomePage.jsx';
 
 const MainContext = createContext()
 
+const initWorkout = {
+    userId: "TODO",
+    exercises: [],   
+    notes: ""
+}
+
 // Original is commented out at the bootum. Need to update to implement the Workout page
 // This uncommented part is a proxy to direct the app to the workout page
 function App() {
     const [data, setData] = useState(woData);
-    const [workout, setWorkout] = useState([]);
+    const [workout, setWorkout] = useState(initWorkout);
 
     return (
         <>
