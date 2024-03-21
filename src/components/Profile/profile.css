@@ -1,0 +1,57 @@
+.profile-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.profile-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.profile-info {
+    margin-bottom: 20px;
+}
+
+.profile-info div {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.image-upload-container {
+    text-align: center;
+}
+
+.image-upload-container input[type="file"] {
+    margin-bottom: 20px;
+}
+
+.image-preview {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #333;
+}
+
+.image-preview img {
+    width: 100%;
+    height: auto;
+}
+body,
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

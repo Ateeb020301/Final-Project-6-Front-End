@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext} from 'react';
 import axios from 'axios';
 import './login.css'
+import { MainContext } from '../../App';
 
-function Login(props) {
-const {setIsAuthenticated} = props
+function Login() {
+const { setIsAuthenticated } = useContext(MainContext)
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -17,6 +18,7 @@ const {setIsAuthenticated} = props
         }).then(response => {
             localStorage.setItem('userToken', response.data.token);
             localStorage.setItem('username', username)
+            console.log(response)
             setIsAuthenticated(true);
             window.location.href = '/';
         })
