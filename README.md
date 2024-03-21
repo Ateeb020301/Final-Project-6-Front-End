@@ -1,22 +1,10 @@
 # Final-Project-6
 Experis Academy Final Project Ateeb &amp; Tønnes 
 
-
-
-
-
-Backend 
-
-
-
-
-
 Front:
 
 Search bar: Til å søke i muskel grupper 
 Filtrering: Muskler
-
-
 
 Pages
 
@@ -41,8 +29,6 @@ Høyre:
     Submit.
 
 
-
-
 Back-End
 
 Authenticator
@@ -53,3 +39,17 @@ Entitet:
     exercise?type=${"legs"}
 
     filter(ex => ex.type === "legs")
+
+
+    Linking:
+
+    Meny 
+
+    home
+    profil
+    log history
+
+    home = select 
+
+
+

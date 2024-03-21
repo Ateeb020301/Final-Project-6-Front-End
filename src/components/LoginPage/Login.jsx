@@ -15,7 +15,7 @@ function Login() {
       }).then(response => {
         localStorage.setItem('userToken', response.data.accessToken);
         // Redirect the user to another page, like their dashboard
-        window.location.href = '/dash';
+        window.location.href = '/workout';
       })
       // Here you would typically save the JWT to local storage and redirect the user
       console.log(response.data); // Just logging for demonstration

@@ -1,0 +1,50 @@
+.edit-page-container {
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    border: solid black 1px;
+    overflow-y: auto;
+    background-color: #555555;
+}
+
+.edit-header {
+    width: 100%;
+    height: 6%;
+    font-size:x-large;
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit-header-buttons {
+    
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.edit-header-button {
+
+}
+
+.edit-content {
+    height: 100%;
+    width: 50vw;
+}
+
+.edit-exercise-header {
+    height: 8%;
+    align-items: center;
+    font-size: 130%;
+}
+
+.edit-format-display {
+    display: flex;
+    justify-content: space-around;
+}
+
+.edit-sets {
+    display: flex;
+}
