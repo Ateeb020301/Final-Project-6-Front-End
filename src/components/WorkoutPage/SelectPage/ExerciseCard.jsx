@@ -5,7 +5,7 @@ import { WOContext } from "../Workout";
 
 const ExerciseCard = ( {exercise}) => {
     const { handleWOChange, workout } = useContext(WOContext)
-    const exAdded = workout.exercises.some(ex => ex.exerciseId === exercise.id)
+    const exAdded = workout.exercises.some(ex => ex.workoutName === exercise.workoutName)
 
     return ( 
         <div className="exercise-card">

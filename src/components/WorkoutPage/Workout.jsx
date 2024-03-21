@@ -15,28 +15,6 @@ function Workout(){
     const [targetSets, setTargetSets] = useState("3");
     const [targetReps, setTargetReps] = useState("10");
 
-    useEffect(() => {
-        const fetchWorkouts = async () => {
-          const userToken = localStorage.getItem('userToken');
-          try {
-            const response = await axios.get('http://localhost:4000/users', {
-              headers: {
-                Authorization: `Bearer ${userToken}`,
-              },
-            });
-            // if (response.data.status === "success") {
-            //   setUsers(response.data.data);
-            // } else {
-            //   setError("Failed to fetch users. Please try again later.");
-            // }
-          } catch (error) {
-            console.error("Failed to fetch users", error);
-            // setError("Failed to fetch users. Please try again later.");
-          }
-        };
-        fetchWorkouts();
-      }, []);
-
     if (!data) {
         return (<div>Loading</div>)
     }
@@ -53,8 +31,9 @@ function Workout(){
         setWorkout({...workout, exercises: [...workout.exercises, exercise]})
     }  
 
-    const handleWOLogEdit = (id) => {
-        navigator(`/create/edit/${id}`)
+    const handleWOLogEdit = (name) => {
+        const index = workout.exercises.findIndex(ex => ex.workoutName === name)
+        navigator(`/create/edit/${index}`)
     }
 
     const handleWOLogRemove = (id) => {
