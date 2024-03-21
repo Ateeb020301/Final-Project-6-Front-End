@@ -16,7 +16,7 @@ import axios from 'axios';
 const MainContext = createContext()
 
 const initWorkout = {
-    userId: "TODO",
+userId: "TODO",
     exercises: [],   
     notes: ""
 }

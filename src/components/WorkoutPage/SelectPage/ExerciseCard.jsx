@@ -22,7 +22,7 @@ const ExerciseCard = ( {exercise}) => {
                 {exercise.description}
             </div>
             {exAdded && <button>Added</button>}
-            {!exAdded && <button onClick={() => handleWOChange(exercise.id)}>Add</button>}
+            {!exAdded && <button onClick={() => handleWOChange(exercise.workoutName)}>Add</button>}
         </div>
      );
 }

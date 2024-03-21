@@ -18,9 +18,9 @@ function Workout(){
         return (<div>Loading</div>)
     }
 
-    const handleWOChange = (id) => {
+    const handleWOChange = (name) => {
         let exercise = {}
-        exercise.exerciseId = id
+        exercise.exerciseName = name
         exercise.expectedReps = targetReps
         exercise.expectedSets = targetSets  
         exercise.sets = targetSets
