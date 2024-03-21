@@ -14,7 +14,6 @@ import HomePage from './components/WorkoutPage/SelectPage/HomePage.jsx';
 const MainContext = createContext()
 
 const initWorkout = {
-userId: "TODO",
     exercises: [],   
     notes: ""
 }
@@ -28,22 +27,22 @@ function App() {
     return (
         <>
           <div className="container">
-            <header className="header">
-                < Menu />
-            </header>
-            <div className="content">
             <MainContext.Provider  value = { {data: data, workout: workout, setData: setData, setWorkout: setWorkout} } >
-                <Routes>
-                    <Route path="home" element={<HomePage />} />
-                    <Route path="login" element={<Login />} />
-                    <Route path="/" element={< Signup/>} />
-                    <Route path='create' element={<Workout />} >
-                        <Route path='workouts' element={< SelectPage />} />
-                        <Route path='edit/:id' element={< EditPage />} />
-                    </Route> 
-                </Routes>
+                <header className="header">
+                    < Menu />
+                </header>
+                <div className="content">
+                    <Routes>
+                        <Route path="home" element={<HomePage />} />
+                        <Route path="login" element={<Login />} />
+                        <Route path="/" element={< Signup/>} />
+                        <Route path='create' element={<Workout />} >
+                            <Route path='workouts' element={< SelectPage />} />
+                            <Route path='edit/:id' element={< EditPage />} />
+                        </Route> 
+                    </Routes>
+                </div>
             </MainContext.Provider>
-            </div>
           </div>
         </>
     );

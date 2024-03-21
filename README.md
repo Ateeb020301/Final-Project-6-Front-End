@@ -62,7 +62,13 @@ Entitet:
     -> url
 
 
+    Fetching
     
+
+
+    Workout 
+
+
 
 
 

@@ -1,9 +1,10 @@
 import { Outlet, useNavigate } from 'react-router-dom'
 import './WorkoutPage.css'
 import '../../App.css'
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 import ProgramPage from './ProgramPage/ProgramPage'
 import { MainContext } from '../../App'
+import axios from 'axios'
 
 const WOContext = createContext()
 
@@ -13,6 +14,28 @@ function Workout(){
     const {data, workout, setWorkout} = useContext(MainContext)
     const [targetSets, setTargetSets] = useState("3");
     const [targetReps, setTargetReps] = useState("10");
+
+    useEffect(() => {
+        const fetchWorkouts = async () => {
+          const userToken = localStorage.getItem('userToken');
+          try {
+            const response = await axios.get('http://localhost:4000/users', {
+              headers: {
+                Authorization: `Bearer ${userToken}`,
+              },
+            });
+            // if (response.data.status === "success") {
+            //   setUsers(response.data.data);
+            // } else {
+            //   setError("Failed to fetch users. Please try again later.");
+            // }
+          } catch (error) {
+            console.error("Failed to fetch users", error);
+            // setError("Failed to fetch users. Please try again later.");
+          }
+        };
+        fetchWorkouts();
+      }, []);
 
     if (!data) {
         return (<div>Loading</div>)
