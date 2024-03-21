@@ -16,7 +16,7 @@ import axios from 'axios';
 const MainContext = createContext()
 
 const initWorkout = {
-userId: "TODO",
+    logDat: "",
     exercises: [],   
     notes: ""
 }
@@ -81,22 +81,22 @@ function App() {
     return (
         <>
           <div className="container">
-            <header className="header">
-                < Menu />
-            </header>
-            <div className="content">
-            <MainContext.Provider  value = { {data: data, workout: workout, setData: setData, setWorkout: setWorkout, person:person} } >
-                <Routes>
-                    <Route path="home" element={<HomePage />} />
-                    <Route path="login" element={<Login />} />
-                    <Route path="/" element={< Signup/>} />
-                    <Route path='create' element={<Workout />} >
-                        <Route path='workouts' element={< SelectPage />} />
-                        <Route path='edit/:id' element={< EditPage />} />
-                    </Route> 
-                </Routes>
+            <MainContext.Provider  value = { {data: data, workout: workout, setData: setData, setWorkout: setWorkout, person: person, error:error, setError: setError} } >
+                <header className="header">
+                    < Menu />
+                </header>
+                <div className="content">
+                    <Routes>
+                        <Route path="home" element={<HomePage />} />
+                        <Route path="login" element={<Login />} />
+                        <Route path="/" element={< Signup/>} />
+                        <Route path='create' element={<Workout />} >
+                            <Route path='workouts' element={< SelectPage />} />
+                            <Route path='edit/:index' element={< EditPage />} />
+                        </Route> 
+                    </Routes>
+                </div>
             </MainContext.Provider>
-            </div>
           </div>
         </>
     );

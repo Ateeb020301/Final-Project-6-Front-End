@@ -4,10 +4,7 @@ import { useContext } from "react";
 import { WOContext } from "../Workout";
 
 const ProgramCard = ( { exercise } ) => {
-    const { data, handleWOLogEdit, handleWOLogRemove } = useContext(WOContext)
-    const dataExercise = data.filter(ex => ex.id === exercise.exerciseId)
-
-
+    const { handleWOLogEdit, handleWOLogRemove } = useContext(WOContext)
 
 
     return ( 
@@ -15,7 +12,7 @@ const ProgramCard = ( { exercise } ) => {
             <div className="program-card">
                 <div className="program-card-left">
                     <div className="program-card-title">
-                        {dataExercise && dataExercise[0].workoutName}
+                        {exercise.workoutName}
                     </div>
                     <div>
                         <div className="program-card-expected">
@@ -28,7 +25,7 @@ const ProgramCard = ( { exercise } ) => {
                         </div>
                     </div>
                     <div className="program-card-buttons">
-                        <button onClick={() => handleWOLogEdit(exercise.exerciseId)}>Edit</button>
+                        <button onClick={() => handleWOLogEdit(exercise.workoutName)}>Edit</button>
                         <button onClick={() => handleWOLogRemove(exercise.exerciseId)}>Remove</button>
                     </div>
                 </div>

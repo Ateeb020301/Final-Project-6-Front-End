@@ -1,23 +1,31 @@
 import { useContext } from "react";
-import { WOContext } from "../Workout";
 import ProgramCard from "./ProgramCard";
 import "./ProgramPage.css"
+import { MainContext } from "../../../App";
+import axios from "axios";
 
 const initWorkout = {
-    userId: "TODO",
+    logDat: "",
     exercises: [],   
     notes: ""
 }
 
 const ProgramPage = () => {
-    const { workout, setWorkout } = useContext(WOContext)
+    const { person, workout, setWorkout } = useContext(MainContext)
 
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        // update database endpoints
-        console.log(workout)
+        const userToken = localStorage.getItem('userToken');
+        const currentDate = new Date();
+        const newWorkout = {...workout, logDat: `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(currentDate.getDate()).padStart(2, '0')}T${String(currentDate.getHours()).padStart(2, '0')}:${String(currentDate.getMinutes()).padStart(2, '0')}:${String(currentDate.getSeconds()).padStart(2, '0')}`}
+        const logResponse = await axios.post(`http://localhost:4000/logs/user/${person.id}`, newWorkout, {
+            headers: { Authorization: `Bearer ${userToken}` }
+          });
         setWorkout(initWorkout)
+        console.log(logResponse);
     }
+
     
     const handleNotes = (e) => {
         e.preventDefault()

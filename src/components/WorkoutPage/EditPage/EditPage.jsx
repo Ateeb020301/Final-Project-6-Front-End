@@ -5,12 +5,12 @@ import "./EditPage.css"
 
 const EditPage = () => {
     const navigator = useNavigate()
-    const { id } = useParams()
-    const { workout, data, handleWOLogUpdate } = useContext(WOContext)
+    const { index } = useParams()
+    const { workout, handleWOLogUpdate } = useContext(WOContext)
     const [exercise, setExercise] = useState();
 
     useEffect(() => {
-        setExercise(workout.exercises.find(ex => ex.exerciseId === parseInt(id)))
+        setExercise(workout.exercises[index])
     }, []);
     
     const handleBack = () => {
@@ -44,7 +44,7 @@ const EditPage = () => {
         }));
     }
 
-    if (!workout || ! id)
+    if (!workout || ! index)
     {
         return (
             <>
@@ -63,8 +63,6 @@ const EditPage = () => {
             )
     }
 
-    const dataExercise = data.find(ex => ex.id === parseInt(id))
-
     return ( 
         <>
             <div className="edit-page-container">
@@ -79,7 +77,7 @@ const EditPage = () => {
                 </div>
                 <div className="edit-content">
                     <div className="edit-exercise-header">
-                        {dataExercise.workoutName}
+                        {exercise.workoutName}
                     </div>
                     <div className="edit-format-display">
                         <div>
