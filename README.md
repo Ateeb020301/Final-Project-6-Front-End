@@ -53,3 +53,17 @@ Entitet:
 
 
 
+
+    User
+
+    fetch users
+    find username (unique)
+    userId = person.id
+    -> url
+
+
+    
+
+
+
+

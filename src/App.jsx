@@ -14,7 +14,7 @@ import HomePage from './components/WorkoutPage/SelectPage/HomePage.jsx';
 const MainContext = createContext()
 
 const initWorkout = {
-    userId: "TODO",
+userId: "TODO",
     exercises: [],   
     notes: ""
 }
