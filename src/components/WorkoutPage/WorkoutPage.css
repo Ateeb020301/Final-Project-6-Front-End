@@ -35,6 +35,7 @@ body,
     height: 86vh;
     display: flex;
     flex-flow: column;
+    
     /*controls the height for add workout page*/
 }
 
