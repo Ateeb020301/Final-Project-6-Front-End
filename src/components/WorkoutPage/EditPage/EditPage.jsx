@@ -67,9 +67,7 @@ const EditPage = () => {
         <>
             <div className="edit-page-container">
                 <div className="edit-header">
-                    <div className="edit-header-text">
                         <header>Log Exercise </header>
-                    </div>
                     <div className="edit-header-buttons">
                         <button onClick={() => handleWOLogUpdate(exercise)}>Save</button>
                         <button onClick={handleBack}>Back</button>

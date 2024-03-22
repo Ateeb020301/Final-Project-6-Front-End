@@ -48,7 +48,6 @@ const ProgramCard = ( { exercise } ) => {
                         </tbody>
                     ))}
                 </table>
-                    
                 </div>
             </div> 
         </>

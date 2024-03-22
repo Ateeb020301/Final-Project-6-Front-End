@@ -1,58 +1,67 @@
 
 .program-page-container {
     width: 50vw;
-    height: 89.7vh;
+    height: 86vh;
     border-top: solid rgb(0, 0, 0) 1.5px;
     overflow-y: auto;
-    background-color: #555555;
+    background-color: #2c3e50;
 }
 
 .program-content { 
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
-    height: 83.7vh;
+justify-content: center;
+align-items: center;
+  gap: 20px;
+  padding: 20px;
 }
 
 .program-page-header {
-    width: 100%;
-    height: 6%;
-    font-size:x-large;
+  display: flex;
+  color: white;
+  font-size: 24px;
+  margin-top: 20px;
+  background-color: #2c3e50;
+  border-bottom: #ffffff solid 1px;
 }
 
-.program-card-container {
-    margin: 1%;
-}
+
 
 .program-cards { 
-    display: flex;
-    flex-flow: column;
-
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .program-card {
-    width: 100%;
-    background-color: rgb(37, 37, 37);
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+background-color: #34495e;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ecf0f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .program-card:hover {
-    transform: scale(1.01);
-    background-color: rgb(58, 58, 58);
+  transform: scale(1.03);
+  background-color: #2c3e50;
 }
 
-.program-card-left {
-    display: flex;
-    flex-flow: column;
-    margin: 4%;
-    align-content: space-between;
+.program-card-left,
+.program-card-expected,
+.program-card-buttons,
+.program-card-logging {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.program-card-title {
-    font-size: 150%;
+.program-card-title,
+.program-card-expected div {
+  font-size: 18px;
 }
 
 .program-card-expected {
@@ -61,12 +70,18 @@
     font-size: 80%;
 }
 
-.program-card-buttons {
-
+.program-card-buttons button {
+  padding: 8px 12px;
+  background-color: #1abc9c;
+  color: #ecf0f1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 5px;
 }
-
-.program-card-button {
-
+.program-card-buttons button:hover {
+  background-color: #148d75;
 }
 
 .program-card-logging {
@@ -91,7 +106,7 @@
   }
   
   .exercise-table tbody tr:hover, th:hover{
-    background-color: #000000;
+    background-color: #148d75;
   }
 
   .program-bottom {
@@ -110,8 +125,6 @@
     display: flex;
     justify-content: end;
     margin: 3%;
-    margin
-
   }
 
 

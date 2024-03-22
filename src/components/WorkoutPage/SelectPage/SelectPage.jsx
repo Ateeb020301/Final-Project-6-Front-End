@@ -1,5 +1,5 @@
 import { useContext,  useState } from "react";
-import "../WorkoutPage.css"
+import '../WorkoutPage.css'
 import ExerciseCard from "./ExerciseCard";
 import { WOContext } from "../Workout";
 
