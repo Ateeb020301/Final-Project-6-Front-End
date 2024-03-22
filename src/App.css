@@ -1,23 +1,27 @@
-body {
-  margin: 0;
-} 
-
+/* *{
+  border: solid black 1px;
+} */
 .container {
-  width: auto;
-  height: 100vh;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
+  height: 92vh;
+  overflow: hidden;
 }
 
 .header {
-  width: 100vw;
-  height: 10vh;
+  flex-shrink: 0;
+  width: 98vw;
 }
 
 .content {
-  display: flex;
-  height: 89.7vh;
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-
-
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #2c3e50;;
+}

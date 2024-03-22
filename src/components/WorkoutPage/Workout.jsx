@@ -1,10 +1,9 @@
 import { Outlet, useNavigate } from 'react-router-dom'
 import './WorkoutPage.css'
 import '../../App.css'
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import ProgramPage from './ProgramPage/ProgramPage'
 import { MainContext } from '../../App'
-import axios from 'axios'
 
 const WOContext = createContext()
 
@@ -21,7 +20,8 @@ function Workout(){
 
     const handleWOChange = (name) => {
         let exercise = {}
-        exercise.exerciseName = name
+        console.log('hei',name);
+        exercise.workoutName = name
         exercise.expectedReps = targetReps
         exercise.expectedSets = targetSets  
         exercise.sets = targetSets
