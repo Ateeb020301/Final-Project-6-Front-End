@@ -30,7 +30,8 @@ export function Signup() {
         <div className="signup">
           <div>
             <header>
-              <Link to='/login'>Login</Link>
+              <button className='loginBtn'><Link to='/login'>Login</Link></button>
+              
             </header>
             <h2>Signup</h2>
           </div>
