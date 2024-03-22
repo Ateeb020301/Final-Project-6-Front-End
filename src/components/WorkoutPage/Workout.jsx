@@ -20,7 +20,6 @@ function Workout(){
 
     const handleWOChange = (name) => {
         let exercise = {}
-        console.log('hei',name);
         exercise.workoutName = name
         exercise.expectedReps = targetReps
         exercise.expectedSets = targetSets  
