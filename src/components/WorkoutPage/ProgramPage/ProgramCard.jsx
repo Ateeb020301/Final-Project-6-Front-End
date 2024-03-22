@@ -26,7 +26,7 @@ const ProgramCard = ( { exercise } ) => {
                     </div>
                     <div className="program-card-buttons">
                         <button onClick={() => handleWOLogEdit(exercise.workoutName)}>Edit</button>
-                        <button onClick={() => handleWOLogRemove(exercise.exerciseId)}>Remove</button>
+                        <button onClick={() => handleWOLogRemove(exercise.workoutName)}>Remove</button>
                     </div>
                 </div>
                 <div className="program-card-logging">

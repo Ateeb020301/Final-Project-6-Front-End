@@ -36,13 +36,13 @@ function Workout(){
         navigator(`/create/edit/${index}`)
     }
 
-    const handleWOLogRemove = (id) => {
-        setWorkout({...workout, exercises: workout.exercises.filter(exercise => exercise.exerciseId !== id)})
+    const handleWOLogRemove = (name) => {
+        setWorkout({...workout, exercises: [...workout.exercises.filter(exercise => exercise.workoutName !== name)]})
     }
 
     const handleWOLogUpdate = (exercise) => {
         setWorkout({...workout, exercises: [...workout.exercises.map(ex => {
-            if (ex.exerciseId === exercise.exerciseId) {
+            if (ex.workoutName === exercise.workoutName) {
                 return exercise
             }
             return ex
