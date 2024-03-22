@@ -18,8 +18,7 @@ const HomePage = () => {
         return (<div>Loading</div>)
     }
 
-    // Filter data
-    // filteresByMuscleGroups.Arm = search ? data.filter(exercise => exercise.muscle.muscleGroup.includes("Arm") || (exercise.workoutName.includes(search))) : data.filter(exercise => exercise.muscle.muscleGroup.includes("Arm"))
+    // Filter data by muscle group
     filteresByMuscleGroups.Arm = data.filter(exercise => exercise.muscle.muscleGroup.includes("Arm"))
     filteresByMuscleGroups.Shoulder = data.filter(exercise => exercise.muscle.muscleGroup.includes("Shoulder"))
     filteresByMuscleGroups.Chest = data.filter(exercise => exercise.muscle.muscleGroup.includes("Chest"))
@@ -27,17 +26,33 @@ const HomePage = () => {
     filteresByMuscleGroups.Legs = data.filter(exercise => exercise.muscle.muscleGroup.includes("Legs"))
     filteresByMuscleGroups.Abs = data.filter(exercise => exercise.muscle.muscleGroup.includes("Abs"))
 
-    // if (search === "00") {
-    //     Object.keys(filteresByMuscleGroups).map((key) => {
-    //         console.log(filteresByMuscleGroups[key])
-    //         return filteresByMuscleGroups[key].filter(exercise => {
-    //             exercise.workoutName.includes(search) || exercise.muscle.muscleGroup.includes(search) ||
-    //             exercise.muscle.muscleName.includes(search) || exercise.description.includes(search) 
-    //         })
-    //     }
-    //     )
-    // }
-
+    // Search filtering of the data
+    if (search) {
+        filteresByMuscleGroups.Arm =  [...filteresByMuscleGroups.Arm.filter(exercise => (
+            exercise.workoutName.toLowerCase().includes(search.toLowerCase()) || exercise.muscle.muscleGroup.toLowerCase().includes(search.toLowerCase()) ||
+            exercise.muscle.muscleName.toLowerCase().includes(search.toLowerCase()) || exercise.description.toLowerCase().includes(search.toLowerCase())
+        ))]
+        filteresByMuscleGroups.Shoulder =  [...filteresByMuscleGroups.Shoulder.filter(exercise => (
+            exercise.workoutName.toLowerCase().includes(search.toLowerCase()) || exercise.muscle.muscleGroup.toLowerCase().includes(search.toLowerCase()) ||
+            exercise.muscle.muscleName.toLowerCase().includes(search.toLowerCase()) || exercise.description.toLowerCase().includes(search.toLowerCase())
+        ))]
+        filteresByMuscleGroups.Chest =  [...filteresByMuscleGroups.Chest.filter(exercise => (
+            exercise.workoutName.toLowerCase().includes(search.toLowerCase()) || exercise.muscle.muscleGroup.toLowerCase().includes(search.toLowerCase()) ||
+            exercise.muscle.muscleName.toLowerCase().includes(search.toLowerCase()) || exercise.description.toLowerCase().includes(search.toLowerCase())
+        ))]
+        filteresByMuscleGroups.Back =  [...filteresByMuscleGroups.Back.filter(exercise => (
+            exercise.workoutName.toLowerCase().includes(search.toLowerCase()) || exercise.muscle.muscleGroup.toLowerCase().includes(search.toLowerCase()) ||
+            exercise.muscle.muscleName.toLowerCase().includes(search.toLowerCase()) || exercise.description.toLowerCase().includes(search.toLowerCase())
+        ))]
+        filteresByMuscleGroups.Legs =  [...filteresByMuscleGroups.Legs.filter(exercise => (
+            exercise.workoutName.toLowerCase().includes(search.toLowerCase()) || exercise.muscle.muscleGroup.toLowerCase().includes(search.toLowerCase()) ||
+            exercise.muscle.muscleName.toLowerCase().includes(search.toLowerCase()) || exercise.description.toLowerCase().includes(search.toLowerCase())
+        ))]
+        filteresByMuscleGroups.Abs =  [...filteresByMuscleGroups.Abs.filter(exercise => (
+            exercise.workoutName.toLowerCase().includes(search.toLowerCase()) || exercise.muscle.muscleGroup.toLowerCase().includes(search.toLowerCase()) ||
+            exercise.muscle.muscleName.toLowerCase().includes(search.toLowerCase()) || exercise.description.toLowerCase().includes(search.toLowerCase())
+        ))]
+    }
     
     return ( 
         <div className="wo-container">
