@@ -10,9 +10,17 @@ jobs:
     name: "Deploy to Netlify"
     steps:
       - uses: actions/checkout@v4
-      - uses: jsmrcaga/action-netlify-deploy@master
+
+      - name: Install dependencies
+        run: npm install  # Adjust based on your package manager
+
+      - name: Build project
+        run: npm run build  # Ensure this matches your build script
+
+      - name: Deploy to Netlify
+        uses: jsmrcaga/action-netlify-deploy@master
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.MY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.MY_SITE_ID }}
           NETLIFY_DEPLOY_TO_PROD: true
-          build_directory: dist/final-project/browser
+          build_directory: dist/final-project/browser  # Update based on actual build output
