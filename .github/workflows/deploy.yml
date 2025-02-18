@@ -15,4 +15,4 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.MY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.MY_SITE_ID }}
           NETLIFY_DEPLOY_TO_PROD: true
-          build_directory: dist/FINAL-PROJECT-6-FRONT-END/browser
+          build_directory: dist/final-project/browser
